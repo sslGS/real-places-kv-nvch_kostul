@@ -57,10 +57,10 @@ class Additional_Details_Meta_Box {
 								$callback_args);
 			}
 		} else {
-			$i = 1;
+			$i = 0;
 			$callback_args = array('i' => $i);
 			add_meta_box(   "additional-details-meta-box_$i", 
-							"Additional Details $i", 
+							"Additional Details", 
 							array( $this, 'display_additional_details' ), 
 							'property', 
 							'normal', 
