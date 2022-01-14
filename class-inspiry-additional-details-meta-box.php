@@ -57,9 +57,8 @@ class Additional_Details_Meta_Box {
 								$callback_args);
 			}
 		} else {
-			$i = 0;
-			$callback_args = array('i' => $i);
-			add_meta_box(   "additional-details-meta-box_$i", 
+			$callback_args = array('i' => 0);
+			add_meta_box(   "additional-details-meta-box_0", 
 							"Additional Details", 
 							array( $this, 'display_additional_details' ), 
 							'property', 
@@ -170,11 +169,7 @@ class Additional_Details_Meta_Box {
 	public function save_additional_details( $post_id ) {
 
 		$detail_title = get_post_meta( $post_id, "detail-title", true );
-		if(empty($detail_title)) {
-			$detail_title = ['Additional Details'];
-		} else {
-			$detail_title = explode(", ", $detail_title);
-		}
+		$detail_title = (empty($detail_title) ? ['Additional Details'] : explode(", ", $detail_title));
 		// First, make sure the user can save the post
 		if( $this->user_can_save( $post_id, $this->nonce ) ) {
 			for ($i = 0; $i < count($detail_title); $i++) {

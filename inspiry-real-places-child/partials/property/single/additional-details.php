@@ -4,11 +4,7 @@ global $inspiry_single_property;
 
 $post = get_post();
 $detail_title = get_post_meta( $post->ID, "detail-title", true );
-if(empty($detail_title)) {
-    $detail_title = ['Additional Details'];
-} else {
-    $detail_title = explode(", ", $detail_title);
-}
+$detail_title = (empty($detail_title) ? ['Additional Details'] : explode(", ", $detail_title));
 foreach($detail_title as $i => $title) {
 	$additional_details = get_post_meta($post->ID, "REAL_HOMES_additional_details_$i", true);
 	if ( ! empty ( $additional_details ) && is_array( $additional_details ) ) {
