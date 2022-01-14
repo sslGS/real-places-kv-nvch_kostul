@@ -17,3 +17,4 @@ function inspiry_edit_property_meta_boxes($meta_boxes) {
 	return $meta_boxes;
 }
 ```
+# Файлы с class-* и js, нужно добавлять к ```/wp-content/plugins/inspiry-real-estate/admin```
