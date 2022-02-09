@@ -32,7 +32,7 @@
     $(function () {
 
         /* Apply jquery ui sortable on additional details */
-        $("#inspiry-additional-details-container").sortable({
+        $(".inspiry-details-wrapper #inspiry-additional-details-container").sortable({
             revert: 100,
             placeholder: "detail-placeholder",
             handle: ".sort-detail",
